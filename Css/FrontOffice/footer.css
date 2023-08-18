@@ -1,0 +1,226 @@
+﻿.section-divider {
+    padding: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    background-image: linear-gradient(60deg, #7b00ff, #c300ff);
+    -webkit-background-clip: padding-box;
+    margin-top: 10px;
+    padding: 10px 14px;
+    color: rgb(255, 255, 255);
+    transition: 0.2s ease-in-out;
+}
+
+
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    position: relative;
+}
+
+.logo {
+    font-size: 25px;
+    height: 60px;
+    padding: 8px 50px;
+}
+
+
+
+.nav input[type="text"] {
+    flex: 1;
+    width: 160px;
+    font-weight: 200;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #7b00ff;
+    margin: 11px;
+    padding: 10px 15px;
+}
+
+.search-btn {
+    margin-top: 8px;
+    background: none;
+    float: right;
+    transition: 0.2s ease-in-out;
+}
+
+    .search-btn:hover {
+        opacity: 0.5;
+    }
+
+.search-bar {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav {
+    background-color: #fafafaf1;
+    top: 0%;
+    z-index: 1;
+    max-width: 100%;
+    min-width: 98.5%;
+    margin: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 20px;
+    box-shadow: 1px 3px 10px rgba(30, 30, 30, 0.25);
+    position: fixed;
+    transition: 0.3s;
+}
+
+    .nav:hover {
+        box-shadow: 1px 5px 15px rgba(30, 30, 30, 0.353);
+    }
+
+    .nav ul {
+        height: 60px;
+        border-radius: 10px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+        .nav ul li:not(.cart .login .search-bar) {
+            height: 60px;
+            float: left;
+        }
+
+
+
+hr {
+    size: 0.5px;
+    color: rgb(224, 224, 224);
+}
+
+.nav ul li a {
+    height: 60px;
+    background-image: linear-gradient(60deg, #6511e2, #ff3a3a);
+    -webkit-background-clip: text;
+    color: transparent;
+    position: sticky;
+    display: block;
+    text-align: center;
+    padding: 18px 24px;
+    transition: 0.2s;
+}
+
+    .nav ul li a:hover:not(.cart a, .login a, .search-bar) {
+        overflow: hidden;
+        box-shadow: 0 5px 2px -2px rgb(115, 0, 255);
+        margin: -3px 0px;
+    }
+
+.right {
+    float: right !important;
+}
+
+.nav .login a {
+    clip-path: polygon(10% 0, 100% 0%, 100% 100%, 10% 100%, 0 50%);
+    cursor: pointer;
+    background-image: linear-gradient(60deg, #7b00ff, #c300ff);
+    -webkit-background-clip: padding-box;
+    display: block;
+    height: 60px;
+    transition: 0.2s ease-in-out;
+}
+
+.login a:hover {
+    opacity: 0.6 !important;
+}
+
+.cart {
+    width: auto;
+    transition: 0.2s ease-in-out;
+}
+
+.cart a:hover {
+    overflow: hidden;
+    box-shadow: 0 5px 2px -2px rgb(115, 0, 255);
+    margin: -3px 0px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .info-row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.sicon {
+    padding: 12px;
+    transition: 0.2s;
+}
+
+    .sicon:hover {
+        margin: -5px 0px;
+    }
+
+.copy {
+    color: rgb(0, 0, 0);
+}
+
+.info-tab {
+    background-color: #fafafaf1;
+    height: auto;
+    margin: 40px;
+    border-radius: 20px;
+    box-shadow: 1px 3px 10px rgba(30, 30, 30, 0.25);
+    transition: 0.3s;
+}
+
+    .info-tab:hover {
+        box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.25);
+    }
+
+.info-column {
+    padding: 20px;
+    text-align: justify;
+    margin: 10px;
+    width: 25%;
+    max-height: 100%;
+}
+
+.info-tab h1 {
+    font-size: 30px;
+    height: 60px;
+}
+
+.info-tab p {
+    padding: 2px;
+}
+
+.info-tab p a:hover {
+    color: #c300ff;
+}
+

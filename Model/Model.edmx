@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PETADOPTIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADOPTION">
+          <Key>
+            <PropertyRef Name="ADOPTIONID" />
+          </Key>
+          <Property Name="ADOPTIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADOPTIONNO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="int" Nullable="false" />
+          <Property Name="CUSTOMERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PETID" Type="int" Nullable="false" />
+          <Property Name="ICIMAGE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PHONE" Type="varchar" MaxLength="12" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PETNO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AGE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="SIZE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="GENDER" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="BREED" Type="varchar(max)" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IMAGE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DESC" Type="varchar(max)" Nullable="false" />
+          <Property Name="REASONOFREJECTION" Type="varchar(max)" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDDATE" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AUDIT">
+          <Key>
+            <PropertyRef Name="AUDITID" />
+          </Key>
+          <Property Name="AUDITID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUDITNO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PETID" Type="int" Nullable="false" />
+          <Property Name="BOOKINGTIME" Type="datetime" />
+          <Property Name="STARTTIME" Type="datetime" />
+          <Property Name="DESC" Type="varchar(max)" />
+          <Property Name="CONDITION" Type="varchar" MaxLength="30" />
+          <Property Name="COMPLETIONTIME" Type="datetime" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDDATE" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="CUSTOMERID" />
+          </Key>
+          <Property Name="CUSTOMERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PHONE" Type="varchar" MaxLength="12" />
+          <Property Name="MAIL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OTP" Type="nchar" MaxLength="10" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDDATE" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="IMAGE" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="EUTHANASIA">
+          <Key>
+            <PropertyRef Name="EUTHANASIAID" />
+          </Key>
+          <Property Name="EUTHANASIAID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EUTHANASIANO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESC" Type="varchar(max)" />
+          <Property Name="PETID" Type="int" Nullable="false" />
+          <Property Name="DOSE" Type="float" />
+          <Property Name="UOM" Type="varchar" MaxLength="10" />
+          <Property Name="MEDICINE" Type="varchar" MaxLength="50" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EXECUTIONDATE" Type="datetime" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDDATE" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PET">
+          <Key>
+            <PropertyRef Name="PETID" />
+          </Key>
+          <Property Name="PETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PETNO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AGE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="SIZE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="GENDER" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="BREED" Type="varchar(max)" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IMAGE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DESC" Type="varchar(max)" Nullable="false" />
+          <Property Name="ADOPTIONTIME" Type="datetime" />
+          <Property Name="OWNER" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITPERIOD" Type="int" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDDATE" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="USERGROUPNAME" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PHONE" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="MAIL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="datetime" />
+          <Property Name="CREATEDBY" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDDATE" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USERGROUP">
+          <Key>
+            <PropertyRef Name="USERGROUPNAME" />
+          </Key>
+          <Property Name="USERGROUPNAME" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ADOPT_CUST">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+          <End Role="ADOPTION" Type="Self.ADOPTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="CUSTOMERID" />
+            </Principal>
+            <Dependent Role="ADOPTION">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EUTHANASIA_AUDIT">
+          <End Role="PET" Type="Self.PET" Multiplicity="1" />
+          <End Role="EUTHANASIA" Type="Self.EUTHANASIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PET">
+              <PropertyRef Name="PETID" />
+            </Principal>
+            <Dependent Role="EUTHANASIA">
+              <PropertyRef Name="PETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PET_ADOPT">
+          <End Role="PET" Type="Self.PET" Multiplicity="1" />
+          <End Role="ADOPTION" Type="Self.ADOPTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PET">
+              <PropertyRef Name="PETID" />
+            </Principal>
+            <Dependent Role="ADOPTION">
+              <PropertyRef Name="PETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PET_AUDIT">
+          <End Role="PET" Type="Self.PET" Multiplicity="1" />
+          <End Role="AUDIT" Type="Self.AUDIT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PET">
+              <PropertyRef Name="PETID" />
+            </Principal>
+            <Dependent Role="AUDIT">
+              <PropertyRef Name="PETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERGROUPNAME">
+          <End Role="USERGROUP" Type="Self.USERGROUP" Multiplicity="1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERGROUP">
+              <PropertyRef Name="USERGROUPNAME" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="USERGROUPNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PETADOPTIONModelStoreContainer">
+          <EntitySet Name="ADOPTION" EntityType="Self.ADOPTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AUDIT" EntityType="Self.AUDIT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EUTHANASIA" EntityType="Self.EUTHANASIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PET" EntityType="Self.PET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERGROUP" EntityType="Self.USERGROUP" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ADOPT_CUST" Association="Self.FK_ADOPT_CUST">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+            <End Role="ADOPTION" EntitySet="ADOPTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EUTHANASIA_AUDIT" Association="Self.FK_EUTHANASIA_AUDIT">
+            <End Role="PET" EntitySet="PET" />
+            <End Role="EUTHANASIA" EntitySet="EUTHANASIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PET_ADOPT" Association="Self.FK_PET_ADOPT">
+            <End Role="PET" EntitySet="PET" />
+            <End Role="ADOPTION" EntitySet="ADOPTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PET_AUDIT" Association="Self.FK_PET_AUDIT">
+            <End Role="PET" EntitySet="PET" />
+            <End Role="AUDIT" EntitySet="AUDIT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERGROUPNAME" Association="Self.FK_USERGROUPNAME">
+            <End Role="USERGROUP" EntitySet="USERGROUP" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PETADOPTIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADOPTION">
+          <Key>
+            <PropertyRef Name="ADOPTIONID" />
+          </Key>
+          <Property Name="ADOPTIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADOPTIONNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" Nullable="false" />
+          <Property Name="PETID" Type="Int32" Nullable="false" />
+          <Property Name="ICIMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PETNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AGE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SIZE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BREED" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="REASONOFREJECTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_ADOPT_CUST" FromRole="ADOPTION" ToRole="CUSTOMER" />
+          <NavigationProperty Name="PET" Relationship="Self.FK_PET_ADOPT" FromRole="ADOPTION" ToRole="PET" />
+          <Property Name="CUSTOMERNAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AUDIT">
+          <Key>
+            <PropertyRef Name="AUDITID" />
+          </Key>
+          <Property Name="AUDITID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUDITNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PETID" Type="Int32" Nullable="false" />
+          <Property Name="BOOKINGTIME" Type="DateTime" Precision="3" />
+          <Property Name="STARTTIME" Type="DateTime" Precision="3" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONDITION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="COMPLETIONTIME" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PET" Relationship="Self.FK_PET_AUDIT" FromRole="AUDIT" ToRole="PET" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="CUSTOMERID" />
+          </Key>
+          <Property Name="CUSTOMERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OTP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ADOPTIONs" Relationship="Self.FK_ADOPT_CUST" FromRole="CUSTOMER" ToRole="ADOPTION" />
+        </EntityType>
+        <EntityType Name="EUTHANASIA">
+          <Key>
+            <PropertyRef Name="EUTHANASIAID" />
+          </Key>
+          <Property Name="EUTHANASIAID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EUTHANASIANO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PETID" Type="Int32" Nullable="false" />
+          <Property Name="DOSE" Type="Double" />
+          <Property Name="UOM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MEDICINE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXECUTIONDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PET" Relationship="Self.FK_EUTHANASIA_AUDIT" FromRole="EUTHANASIA" ToRole="PET" />
+        </EntityType>
+        <EntityType Name="PET">
+          <Key>
+            <PropertyRef Name="PETID" />
+          </Key>
+          <Property Name="PETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PETNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AGE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SIZE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BREED" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADOPTIONTIME" Type="DateTime" Precision="3" />
+          <Property Name="OWNER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITPERIOD" Type="Int32" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ADOPTIONs" Relationship="Self.FK_PET_ADOPT" FromRole="PET" ToRole="ADOPTION" />
+          <NavigationProperty Name="AUDITs" Relationship="Self.FK_PET_AUDIT" FromRole="PET" ToRole="AUDIT" />
+          <NavigationProperty Name="EUTHANASIAs" Relationship="Self.FK_EUTHANASIA_AUDIT" FromRole="PET" ToRole="EUTHANASIA" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USERGROUPNAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USERGROUP" Relationship="Self.FK_USERGROUPNAME" FromRole="USER" ToRole="USERGROUP" />
+        </EntityType>
+        <EntityType Name="USERGROUP">
+          <Key>
+            <PropertyRef Name="USERGROUPNAME" />
+          </Key>
+          <Property Name="USERGROUPNAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="USERs" Relationship="Self.FK_USERGROUPNAME" FromRole="USERGROUP" ToRole="USER" />
+        </EntityType>
+        <Association Name="FK_ADOPT_CUST">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+          <End Role="ADOPTION" Type="Self.ADOPTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="CUSTOMERID" />
+            </Principal>
+            <Dependent Role="ADOPTION">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PET_ADOPT">
+          <End Role="PET" Type="Self.PET" Multiplicity="1" />
+          <End Role="ADOPTION" Type="Self.ADOPTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PET">
+              <PropertyRef Name="PETID" />
+            </Principal>
+            <Dependent Role="ADOPTION">
+              <PropertyRef Name="PETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PET_AUDIT">
+          <End Role="PET" Type="Self.PET" Multiplicity="1" />
+          <End Role="AUDIT" Type="Self.AUDIT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PET">
+              <PropertyRef Name="PETID" />
+            </Principal>
+            <Dependent Role="AUDIT">
+              <PropertyRef Name="PETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EUTHANASIA_AUDIT">
+          <End Role="PET" Type="Self.PET" Multiplicity="1" />
+          <End Role="EUTHANASIA" Type="Self.EUTHANASIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PET">
+              <PropertyRef Name="PETID" />
+            </Principal>
+            <Dependent Role="EUTHANASIA">
+              <PropertyRef Name="PETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERGROUPNAME">
+          <End Role="USERGROUP" Type="Self.USERGROUP" Multiplicity="1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERGROUP">
+              <PropertyRef Name="USERGROUPNAME" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="USERGROUPNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PETADOPTIONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADOPTIONs" EntityType="Self.ADOPTION" />
+          <EntitySet Name="AUDITs" EntityType="Self.AUDIT" />
+          <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+          <EntitySet Name="EUTHANASIAs" EntityType="Self.EUTHANASIA" />
+          <EntitySet Name="PETs" EntityType="Self.PET" />
+          <EntitySet Name="USERs" EntityType="Self.USER" />
+          <EntitySet Name="USERGROUPs" EntityType="Self.USERGROUP" />
+          <AssociationSet Name="FK_ADOPT_CUST" Association="Self.FK_ADOPT_CUST">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="ADOPTION" EntitySet="ADOPTIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PET_ADOPT" Association="Self.FK_PET_ADOPT">
+            <End Role="PET" EntitySet="PETs" />
+            <End Role="ADOPTION" EntitySet="ADOPTIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PET_AUDIT" Association="Self.FK_PET_AUDIT">
+            <End Role="PET" EntitySet="PETs" />
+            <End Role="AUDIT" EntitySet="AUDITs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EUTHANASIA_AUDIT" Association="Self.FK_EUTHANASIA_AUDIT">
+            <End Role="PET" EntitySet="PETs" />
+            <End Role="EUTHANASIA" EntitySet="EUTHANASIAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERGROUPNAME" Association="Self.FK_USERGROUPNAME">
+            <End Role="USERGROUP" EntitySet="USERGROUPs" />
+            <End Role="USER" EntitySet="USERs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PETADOPTIONModelStoreContainer" CdmEntityContainer="PETADOPTIONEntities">
+          <EntitySetMapping Name="ADOPTIONs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.ADOPTION">
+              <MappingFragment StoreEntitySet="ADOPTION">
+                <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
+                <ScalarProperty Name="ADOPTIONID" ColumnName="ADOPTIONID" />
+                <ScalarProperty Name="ADOPTIONNO" ColumnName="ADOPTIONNO" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="PETID" ColumnName="PETID" />
+                <ScalarProperty Name="ICIMAGE" ColumnName="ICIMAGE" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PETNO" ColumnName="PETNO" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="SIZE" ColumnName="SIZE" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="BREED" ColumnName="BREED" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="REASONOFREJECTION" ColumnName="REASONOFREJECTION" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AUDITs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.AUDIT">
+              <MappingFragment StoreEntitySet="AUDIT">
+                <ScalarProperty Name="AUDITID" ColumnName="AUDITID" />
+                <ScalarProperty Name="AUDITNO" ColumnName="AUDITNO" />
+                <ScalarProperty Name="PETID" ColumnName="PETID" />
+                <ScalarProperty Name="BOOKINGTIME" ColumnName="BOOKINGTIME" />
+                <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="CONDITION" ColumnName="CONDITION" />
+                <ScalarProperty Name="COMPLETIONTIME" ColumnName="COMPLETIONTIME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="OTP" ColumnName="OTP" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EUTHANASIAs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.EUTHANASIA">
+              <MappingFragment StoreEntitySet="EUTHANASIA">
+                <ScalarProperty Name="EUTHANASIAID" ColumnName="EUTHANASIAID" />
+                <ScalarProperty Name="EUTHANASIANO" ColumnName="EUTHANASIANO" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="PETID" ColumnName="PETID" />
+                <ScalarProperty Name="DOSE" ColumnName="DOSE" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="MEDICINE" ColumnName="MEDICINE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="EXECUTIONDATE" ColumnName="EXECUTIONDATE" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PETs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.PET">
+              <MappingFragment StoreEntitySet="PET">
+                <ScalarProperty Name="PETID" ColumnName="PETID" />
+                <ScalarProperty Name="PETNO" ColumnName="PETNO" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="SIZE" ColumnName="SIZE" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="BREED" ColumnName="BREED" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="ADOPTIONTIME" ColumnName="ADOPTIONTIME" />
+                <ScalarProperty Name="OWNER" ColumnName="OWNER" />
+                <ScalarProperty Name="AUDITPERIOD" ColumnName="AUDITPERIOD" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="USERGROUPNAME" ColumnName="USERGROUPNAME" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERGROUPs">
+            <EntityTypeMapping TypeName="PETADOPTIONModel.USERGROUP">
+              <MappingFragment StoreEntitySet="USERGROUP">
+                <ScalarProperty Name="USERGROUPNAME" ColumnName="USERGROUPNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

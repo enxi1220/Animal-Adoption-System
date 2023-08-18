@@ -1,0 +1,78 @@
+﻿.header-row {
+    max-height: 100px;
+    min-height: 30px;
+    font-size: 20px;
+    height: 100%;
+}
+/*
+    #2d2d30 secondary black
+    #be98aa primary pink
+*/
+/*.bo-sidenav #Menu2 ul li a*/
+.bo-sidenav {
+    height: 100%;
+    width: 15vw;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    overflow-x: hidden;
+    background-color: #3e3f4c;
+    padding: 0;
+}
+
+#Menu2 {
+    width: 14vw;
+}
+
+#Menu2 ul, #Menu2 li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+}
+
+.bo-sidenav ul a:hover {
+    background-color: #be98aa;
+    transition: 0.3s;
+    color: #2d2d30;
+}
+
+.bo-sidenav ul a {
+    padding: 13px 8px 13px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #f8f4ed;
+    display: block;
+    width: 100%;
+
+}
+
+.bo-sidenav a.active {
+    background-color: antiquewhite;
+    color: white;
+}
+
+.bo-sidenav a.selected {
+    background-color: antiquewhite;
+    color: white;
+}
+
+.bo-sidenav a.selected.static {
+
+    color: black;
+}
+
+.level1.static{
+    background-image:url(Images/a.jpg);
+}
+
+#Menu2 a.level3 {
+    padding-left: 3em;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="View/FrontOffice/Pet/FO_PetSummary.aspx" title="Adopt Me" description="">
+		<siteMapNode url="View/BackOffice/User/BO_UserSummary.aspx" title="User "  description="" />
+		<siteMapNode url="View/BackOffice/Pet/BO_PetSummary.aspx" title="Pet"  description="" />
+		<siteMapNode url="View/BackOffice/Adoption/BO_AdoptionSummary.aspx" title="Adoption"  description="" />
+		<siteMapNode url="View/BackOffice/Customer/BO_CustomerSummary.aspx" title="Customer"  description="" />
+		<siteMapNode title="Services">
+			<siteMapNode url="View/BackOffice/Audit/BO_AuditSummary.aspx" title="Audit"  description="" />
+			<siteMapNode url="View/BackOffice/Euthanasia/BO_EuthanasiaSummary.aspx" title="Euthanasia"  description="" />
+		</siteMapNode>
+		<siteMapNode title="Reports">
+			<siteMapNode url="View/BackOffice/Report/BO_AdoptionReport.aspx" title="Adoption"  description="" />
+			<siteMapNode url="View/BackOffice/Report/BO_EuthanasiaReport.aspx" title="Euthanasia"  description="" />
+			<!--<siteMapNode url="View/BackOffice/Report/BO_EuthanasiaSummary.aspx" title="Euthanasia"  description="" />-->
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

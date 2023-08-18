@@ -1,0 +1,60 @@
+﻿body {
+    /*background-color: #FEFBF7;*/
+    /*background-color: #FFFAF4;*/
+    background-color: #FFFBF6;
+    /*background-color: #FFFCF8;*/
+
+}
+
+*, html {
+    scroll-behavior: smooth;
+    font: calibri 19px;
+}
+
+/*:root {
+    scrollbar-color: #BCACA4;
+    scrollbar-width: thin !important;
+    background-colo: var(--coffee);
+}*/
+
+/*DEFAULT*/
+a {
+    text-decoration: none;
+    /*color: #2d2d30;*/
+    color: #465e65;
+}
+
+    a:hover, a:active {
+        text-decoration: none;
+        color: #c99e8c;
+        /*color: #be98aa;*/
+    }
+
+
+li {
+    list-style: none;
+}
+
+#Menu1 a.popout {
+    /*background-image: url(https://icon-library.com/images/dropdown-icon/dropdown-icon-17.jpg) !important;*/
+    padding-right: 25px !important;
+}
+
+.petBg {
+    background-color: #f8f4ed;
+}
+
+.lgbtn {
+    margin-top: 13px;
+}
+
+.m-md {
+    margin-top: 138px;
+    margin-left: 250px;
+
+}
+
+.mt-md {
+    margin-top: 83px;
+}
+

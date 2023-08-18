@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="View/FrontOffice/FO_Home.aspx" title="Home">
+
+		<siteMapNode url="View/FrontOffice/Pet/FO_PetSummary.aspx" title="Pets"/>
+
+		<siteMapNode url="View/FrontOffice/Customer/FO_CustSignUp.aspx" title="Join Us" />
+
+		<siteMapNode url="View/FrontOffice/FO_AboutUs.aspx" title="About Us"/>
+
+	</siteMapNode>
+</siteMap>

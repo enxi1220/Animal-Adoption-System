@@ -1,0 +1,39 @@
+﻿.user-detail-container {
+    background-color: #F5E9E4;
+    color: #465e65;
+}
+
+.user-detail-container p {
+    margin-bottom: 8px;
+}
+
+.user-detail-container span {
+    width: 88px;
+    display: inline-block;
+}
+
+.nav-tabs .nav-link {
+    color: #f8f4ed;
+    background-color: #3e3f4c;
+}
+
+    .nav-tabs .nav-link:hover {
+        transition: .3s;
+        color: #2d2d30;
+        background-color: #f8f4ed;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #f8f4ed;
+        background-color: #be98aa;
+        border-color: #f8f4ed;
+    }
+
+.pImgSty {
+    position: absolute;
+    top: 3.8em;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+    object-fit: cover;
+}

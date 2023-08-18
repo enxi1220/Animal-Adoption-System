@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FO_MasterPage.Master.cs" Inherits="AnimalAdoptionSystem.View.FrontOffice.FO_MasterPage" %>
+
+<!DOCTYPE html>
+<noscript>
+    <style type="text/css">
+        .rootDiv {
+            display: none;
+        }
+    </style>
+    <h1>Oops... </h1>
+    <h3>Your javascript is unabled. Please enable it to continue...</h3>
+</noscript>
+<html>
+    
+<head runat="server">
+    <title></title>
+
+    <link href="Libraries/MDB_BS5/css/mdb.min.css" rel="stylesheet" />
+    <link href="Css/FrontOffice/general.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server" class="rootDiv">
+        <nav class="d-flex justify-content-center" style="background-color: #3e3f4c;">
+            <asp:Menu ID="Menu1" class="ms-4 p-1" runat="server" BackColor="#3e3f4c" DataSourceID="SiteMapDataSource1" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Large" ForeColor="#f8f4ed" ItemWrap="True" Orientation="Horizontal" StaticDisplayLevels="2">
+                <DynamicHoverStyle BackColor="#be98aa" ForeColor="#2d2d30" />
+                <DynamicMenuItemStyle HorizontalPadding="19px" VerticalPadding="13px" />
+                <DynamicMenuStyle BackColor="#3e3f4c" />
+                <DynamicSelectedStyle BackColor="#be98aa" ForeColor="#2d2d30" />
+                <StaticHoverStyle BackColor="#be98aa" ForeColor="#2d2d30" />
+                <StaticMenuItemStyle HorizontalPadding="19px" VerticalPadding="13px" />
+                <StaticSelectedStyle BackColor="#be98aa" ForeColor="#2d2d30" />
+
+            </asp:Menu>
+        </nav>
+
+        <nav class="position-absolute top-0 start-0 ms-3">
+            <asp:HyperLink ID="homeLink" runat="server" NavigateUrl="~/View/FrontOffice/FO_Home.aspx">
+                
+                    <asp:Image ID="logoWord" runat="server" ImageUrl="~/Images/petLogo.png" Height="66" Width="150" CssClass="me-2" />
+                    <asp:Image ID="logo" runat="server" ImageUrl="~/Images/paws.png" Height="66" Width="150" />
+            </asp:HyperLink>
+        </nav>
+
+       <asp:HyperLink ID="custProfileLink" runat="server" CssClass="position-absolute top-0 end-0" Style="margin-right: 130px; margin-top: 6px;" NavigateUrl="~/View/FrontOffice/Customer/FO_CustViewAcc.aspx"><span data-mdb-toggle="tooltip" data-mdb-placement="left" title="my profile"><asp:Image ID="custProfileImg" runat="server" CssClass="rounded-circle" Style=" width: 50px; height: 50px; object-fit: cover;" /></span></asp:HyperLink>
+       <asp:HyperLink ID="backOfficeLink" runat="server" CssClass="position-absolute top-0 end-0" Style="margin-right: 130px; margin-top: 6px;" NavigateUrl="~/View/BackOffice/Pet/BO_PetSummary.aspx"><span data-mdb-toggle="tooltip" data-mdb-placement="left" title="back office"><asp:Image ID="backOfficeImg" runat="server" CssClass="rounded-circle" Style=" width: 50px; height: 50px; object-fit: cover;" ImageUrl="~/Images/backOfficeImg.jpg" /></span></asp:HyperLink>
+
+        
+        <asp:HyperLink ID="loginLink" runat="server" CssClass="btn btn-outline-white position-absolute top-0 end-0 me-3 lgbtn" NavigateUrl="~/View/FrontOffice/Customer/FO_CustSignIn.aspx">Log In</asp:HyperLink>
+        <asp:LinkButton ID="logoutLink" runat="server" CssClass="btn btn-outline-white position-absolute top-0 end-0 me-3 lgbtn" OnClick="logoutLink_Click" EnableEventValidation="false" >Log Out</asp:LinkButton>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light ps-3">
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator=" / "></asp:SiteMapPath>
+        </nav>
+
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="FO_SiteMap" />
+
+  
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> 
+        
+        </asp:ContentPlaceHolder>
+       
+                        <!-- MDB -->
+    <script src="/Libraries/MDB_BS5/js/mdb.min.js"></script>
+
+    <!-- jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Swal -->
+    <script src="/Libraries/sweetalert2.all.min.js"></script>
+
+        <%--<script src='<%= ResolveUrl("Libraries/MDB_BS5/js/mdb.min.js") %>'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src='<%= ResolveUrl("Libraries/sweetalert2.all.min.js") %>'></script>--%>
+    </form>
+
+
+</body>
+</html>

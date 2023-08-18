@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BO_MasterPage.master.cs" Inherits="AnimalAdoptionSystem.View.BackOffice.BO_MasterPage" %>
+
+<!DOCTYPE html>
+<noscript>
+    <style type="text/css">
+        .rootDiv {
+            display: none;
+        }
+    </style>
+    <h1>Oops... </h1>
+    <h3>Your javascript is unabled. Please enable it to continue...</h3>
+</noscript>
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Libraries/MDB_BS5/css/mdb.min.css" rel="stylesheet" />
+    <link href="Css/BackOffice/BO_MasterPage.css" rel="stylesheet" />
+    <link href="Css/BackOffice/BO_Summary.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    
+</head>
+<body class="w-100 h-100" style="overflow-x: hidden">
+    <form runat="server" class="w-100 h-100 rootDiv" >
+        <div class="m-2 shadow-4 row header-row">
+            <div class="col bg-light p-2 pe-3 position-fixed">
+                <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" SiteMapProvider="BO_SiteMap" />
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator="/" SiteMapProvider="BO_SiteMap" ForeColor="Black">
+                    <NodeStyle ForeColor="Black" />
+                    <RootNodeStyle ForeColor="Black" />
+                </asp:SiteMapPath>
+                <div class="float-end text-grayish">
+                    <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+        </div>
+        <div style="height: 95%;" class="row">
+            <div class="col-2 text-wrap h-full bo-sidenav mt-2">
+                <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2" StaticDisplayLevels="3" >
+                    <StaticSelectedStyle ForeColor="" />
+                </asp:Menu>
+            </div>
+            <div class="col-10 h-full" style="margin-left: 16.5vw; padding-right: 2vw">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+
+   
+
+    <!-- MDB -->
+    <script src="/Libraries/MDB_BS5/js/mdb.min.js"></script>
+
+    <!-- jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Swal -->
+    <script  type="text/javascript" src="/Libraries/sweetalert2.all.min.js"></script>
+
+    </form>
+</body>
+</html>
